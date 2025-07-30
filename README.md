@@ -1,6 +1,4 @@
-Claro! Aqui está o código do `README.md` completo em **Markdown**, pronto para colar no seu repositório:
 
-````markdown
 # Simplify Tasks API
 
 API RESTful para gerenciamento de tarefas desenvolvida com Spring Boot. Este projeto é parte de um desafio técnico backend júnior e possui operações completas de CRUD com suporte a prioridade e status das tarefas.
