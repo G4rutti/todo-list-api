@@ -21,7 +21,7 @@ COPY src ./src
 
 # Executa o comando para compilar o projeto, gerar o pacote .jar
 # e pular os testes (pois não são necessários no ambiente de build).
-RUN mvn clean install -DskipTests
+RUN mvn clean package -DskipTests
 
 
 # =========================================================================
@@ -30,7 +30,7 @@ RUN mvn clean install -DskipTests
 # para rodar a aplicação (JRE), e não todas as ferramentas de build.
 # Isso torna sua imagem final muito menor e mais segura.
 # =========================================================================
-FROM eclipse-temurin:17-jre-focal
+FROM eclipse-temurin:17-alpine
 
 # Define o diretório de trabalho padrão.
 WORKDIR /app
@@ -48,4 +48,4 @@ EXPOSE 8080
 
 # Comando final que será executado quando o container iniciar.
 # Ele simplesmente executa o arquivo .jar da sua aplicação.
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=render","-jar","rest-api-template.jar", "app.jar"]
