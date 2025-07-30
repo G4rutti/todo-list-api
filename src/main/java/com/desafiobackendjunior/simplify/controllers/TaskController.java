@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://frontend-simplify-phi.vercel.app/"})
 @RestController
 @RequestMapping("/")
 public class TaskController {
